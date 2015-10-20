@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.center {
+  text-align: center;
+}
+
+form {
+  margin-top: 40px;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+#passwordInput {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

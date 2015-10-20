@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h1= title
+
+  form#form.form-horizontal(method='POST')
+    unless error == 0
+      .alert.alert-danger(role="alert")
+        strong Error !
+        |  Password incorrect !
+    if message_sent == true
+      .alert.alert-success(role="alert")
+        strong OK !
+        |  Message sent !
+
+    .form-group
+      label.col-sm-2.control-label(for="title") Title
+      .col-sm-10
+        input#title.form-control(type="text", placeholder="Title... ", name="title", required)
+    .form-group
+      label.col-sm-2.control-label(for="text") Text
+      .col-sm-10
+        textarea#text.form-control(placeholder="Your text here...", name="text", required)
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button#send.btn.btn-success(type="button") Send !
+
+    #passwordModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="myModalLabel")
+      .modal-dialog(role="document")
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal", aria-label="Close")
+              span(aria-hidden="true") &#215;
+            h4#myModalLabel.modal-title Please, enter the password to continue
+          .modal-body
+            #passwordInput.center
+              input#password.center(type="password", placeholder="Password... ", name="password").form-control
+          .modal-footer
+            button.btn.btn-default(type="button", data-dismiss="modal") Close
+            button.btn.btn-success(type="submit") Confirm !
+
